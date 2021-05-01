@@ -10,17 +10,11 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.experimental.FieldDefaults;
-
 /**
  * Unit Test Class for data structure interface {@link MetadataModel#MetadataModel model}.
  */
 @DisplayName("A Metadata Model")
 @TestMethodOrder(Alphanumeric.class)
-@FieldDefaults(level = AccessLevel.PRIVATE)
-@Getter(AccessLevel.PRIVATE)
 class MetadataModelTest {
 
 	@Nested
