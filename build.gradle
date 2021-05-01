@@ -13,14 +13,12 @@ targetCompatibility = JavaVersion.VERSION_1_8
 
 // repositories allowed to management dependencies
 apply from: "$rootDir/config/gradle/repositories.gradle"
+// Add support to testing steps
+apply from: "$rootDir/config/gradle/testing.gradle"
 
 dependencies {
 	// for Application Programming Interface (API) RESTfull context
 	implementation "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
 	// A document to functiontionality expose for each entry point
 	implementation "io.springfox:springfox-boot-starter:$swaggerVersion"
-	implementation "io.springfox:springfox-swagger2:$swaggerVersion"
-	implementation "io.springfox:springfox-swagger-ui:$swaggerVersion"
 }
-
-// https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready-application-info-automatic-expansion-gradle

@@ -14,7 +14,7 @@ import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 
 /**
- * Meta-information to prinacipal model
+ * Meta-information to principal model
  */
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
@@ -22,7 +22,7 @@ import lombok.experimental.FieldDefaults;
 @Getter
 @Setter
 @ToString
-@Builder(toBuilder = true)
+@Builder
 public class MetadataModel implements Serializable {
 
 	/**
@@ -33,7 +33,7 @@ public class MetadataModel implements Serializable {
 	/** The identifier auto generated */
 	@Schema(
 			description = "The identifier auto generated",  
-			example = "00000000-0000-0000-0000-000000000000")
+			example = "00000000-0000-0000-0000-000000000001")
 	UUID principal;
 
 	/**

@@ -1,0 +1,15 @@
+dependencies {
+	testImplementation("org.springframework.boot:spring-boot-starter-test:$springBootVersion") {
+		because 'Avoid the test engine for running JUnit 3/4 tests on the JUnit Platform and pitest execution'
+		exclude group: 'junit', module: 'junit'
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	// to check trace engine
+	testImplementation "io.github.hakky54:logcaptor:$logCaptorVersion"
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+	scanForTestClasses = false
+	maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+}

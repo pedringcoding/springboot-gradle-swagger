@@ -2,7 +2,6 @@ package es.pedcod.main.config;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.scheduling.annotation.EnableAsync;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -10,7 +9,6 @@ import lombok.extern.slf4j.Slf4j;
  * This is the main Spring Boot application class. It configures Spring Context to server executions.
  */
 @SpringBootApplication
-@EnableAsync
 @Slf4j
 public class SpringBootRunner {
 
