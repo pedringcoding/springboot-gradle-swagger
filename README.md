@@ -20,6 +20,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 
 ```
 choco install zulu8 -y
+```
 
 *	[Gradle](https://gradle.org/) - Constructor and manager dependencies
 
