@@ -10,12 +10,6 @@ Follow along this notes. You will need to have at least [Java 8](https://www.ora
 
 You can use some package management tool for windows. E.g. Chocolatey
 
-*	[Chocolatey](https://chocolatey.org) - Package manager for windows
-
-```
-Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-```
-
 *	[OpenJDK8 Zulu](https://azul.com) - Java Development Kits (OpenJDK build)
 
 ```
@@ -37,6 +31,7 @@ Clone this repository, and fire up a command-line tool.
 To execute the Gradle example:
 
 ```
+gradle build
 gradle bootRun
 ```
 
