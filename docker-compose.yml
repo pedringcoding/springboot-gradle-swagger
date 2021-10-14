@@ -1,0 +1,11 @@
+version: "3.4"
+
+services:
+
+  webapp:
+    build:
+      context: .
+    container_name: swagger-api
+    image: pedringcoding/swagger-api:latest
+    ports:
+      - "9090:8080"
