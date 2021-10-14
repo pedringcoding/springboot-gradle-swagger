@@ -2,6 +2,8 @@ package es.pedcod.main.config;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer.Alphanumeric;
 import org.junit.jupiter.api.Nested;
@@ -24,21 +26,36 @@ import springfox.documentation.spring.web.plugins.Docket;
 @Setter(AccessLevel.PRIVATE)
 class SwaggerConfigTest {
 
-	/**
-	 * The principal component to test
-	 */
-	SwaggerConfig configuration;
+    /**
+     * The principal component to test
+     */
+    SwaggerConfig configuration;
 
-	@Nested
-	@DisplayName("Docket Bean")
-	class testDocket {
+    @Nested
+    @DisplayName("Docket Bean")
+    class testDocket {
+        /*
+         * should be executed before each test method
+         */
+        @BeforeEach
+        public void setUpMethod() {
+            setConfiguration(new SwaggerConfig());
+        }
 
-		@Test
-		@DisplayName("Default instance must not be null")
-		void testExistsElements() {
-			final Docket actualBean = getConfiguration().getApiBean();
+        /*
+         * should be executed after each test method
+         */
+        @AfterEach
+        public void setDownMethod() {
+            setConfiguration(null);
+        }
 
-			assertThat(actualBean).isNotNull();
-		}
-	}
+        @Test
+        @DisplayName("Default instance must not be null")
+        void testExistsElements() {
+            final Docket actualBean = getConfiguration().getApiBean();
+
+            assertThat(actualBean).isNotNull();
+        }
+    }
 }
